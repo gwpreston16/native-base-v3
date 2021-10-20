@@ -1,21 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NativeBaseProvider, Text, Center } from 'native-base';
+import { Col, Row, Grid } from 'react-native-easy-grid';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider>
+      <Grid>
+          <Row style={{backgroundColor: 'blue', height: 40}}>
+            <Col>
+              <Center>
+                <Text style={{color: '#ffffff'}}>Left</Text>
+              </Center>
+            </Col>
+            <Col>
+              <Center>
+                <Text style={{color: '#ffffff'}}>My Header</Text>
+              </Center>
+            </Col>
+            <Col>
+              <Center>
+                <Text style={{color: '#ffffff'}}>Right</Text>
+              </Center>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Text>First Column</Text>
+            </Col>
+            <Col>
+              <Text>Second Column</Text>
+            </Col>
+          </Row>
+      </Grid>
+    </NativeBaseProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
